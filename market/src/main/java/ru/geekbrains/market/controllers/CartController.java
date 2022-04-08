@@ -4,34 +4,32 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.market.dtos.AddProductInCartDto;
-import ru.geekbrains.market.dtos.CreateNewProductDto;
-import ru.geekbrains.market.entities.Product;
+import ru.geekbrains.market.entities.Cart;
 import ru.geekbrains.market.services.CartService;
-import ru.geekbrains.market.services.ProductService;
+
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/products")
+@RequestMapping("/api/v1/cart")
 @RequiredArgsConstructor
-public class ProductController {
-    private final ProductService productService;
+public class CartController {
     private final CartService cartService;
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.findAll();
+    public List<Cart> getAllProductsInCart() {
+        return cartService.findAll();
     }
 
     @DeleteMapping("/{id}")
     public void deleteProductById(@PathVariable Long id) {
-        productService.deleteById(id);
+        cartService.deleteById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createNewProducts(@RequestBody CreateNewProductDto createNewProductDto) {
-        productService.createNewProduct(createNewProductDto);
+    public void addProductInCartDto(@RequestBody AddProductInCartDto addProductInCartDto) {
+        cartService.addProductInCart(addProductInCartDto);
     }
 
 }
