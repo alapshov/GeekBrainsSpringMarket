@@ -55,4 +55,9 @@ public class JwtTokenUtil {
     public List<String> getRoles(String token) {
         return getAllClaimsFromToken(token).get("roles", List.class);
     }
+
+    public String getEmail(String token) {
+        return getAllClaimsFromToken(token).get("email", String.class);
+    }
+
 }
