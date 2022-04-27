@@ -6,10 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MarchMarketCoreApplication {
 	// Домашнее задание:
-	// 0. Разобраться с кодом
-	// 1. Перенести все интеграции на WebClient
-	// 2. Переделайте оформление заказа с использования Principal на использование
-	// заголовка username
+	// 0. Покрыть МСы тестами, штук 5-... тестов
 
 	public static void main(String[] args) {
 		SpringApplication.run(MarchMarketCoreApplication.class, args);
