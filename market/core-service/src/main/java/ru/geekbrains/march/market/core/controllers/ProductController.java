@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.geekbrains.march.market.api.PageDto;
 import ru.geekbrains.march.market.api.ProductDto;
 import ru.geekbrains.march.market.core.converters.ProductConverter;
 import ru.geekbrains.march.market.core.entities.Product;
